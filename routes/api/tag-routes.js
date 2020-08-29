@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Product
-        }
+        },
+        
       ]
     });
     res.json(results);
@@ -79,7 +80,7 @@ router.delete('/:id', async (req, res) => {
     res.json(results);
   }catch(err){
     console.log(err);
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
